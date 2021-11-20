@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+  <%- include('./partials/nav.ejs') %>
+  <div class="container">
+    <h2 class="my-3">New home deco entry:</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <form action="/all-items" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="item-name" class="form-label">Item name</label>
+            <input type="text" class="form-control" id="item-name" name="item-name" />
+          </div>
+           <div class="mb-3">
+            <label for="item-category"class="form-label">Category</label>
+            <select class="form-control" id="item-category" name="item-category" >
+               <option value="619753cbdc391c1c7d35975b">Bedroom</option>
+               <option value="619753a3dc391c1c7d35975a">Living Room</option>
+               <option value="6197dd3d2dd9d7fe96489368">Kitchen</option>
+               <option value="619753dedc391c1c7d35975c">Home Office</option>
+               <option value="61976a3ddc391c1c7d35975e">Outdoor Terace</option>
+            </select>
+          </div> 
+          <div class="mb-3">
+            <label for="image" class="form-label">Item Picture</label>
+            <input type="file" class="form-control" id="image" name="image" />
+          </div>
+
+            <textarea id="item-description" cols="72" rows="10" name="item-description">Item Description </textarea>
+         
+          <div class="mb-3">
+            <label for="seller-name" class="form-label">Seller Name</label>
+            <input required type="text" class="form-control" id="seller-name" name="seller-name"/>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="seller-email" class="form-label">Seller Email</label>
+            <input type="email" required class="form-control" id="seller-name" name="seller-email"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="item-quantity" class="form-label">Quantity Sold</label>
+            <input type="number" class="form-control" id="item-quantity" name="quantity"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Price in EUR</label>
+            <input type="number" class="form-control" id="price" name="price"/>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="checkbox" />
+            <label class="form-check-label" for="exampleCheck1"
+              >I agree with my personal data to be used by the admins of this
+              site and it's customers</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+       </div>
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+  <%- include('./partials/nav.ejs') %>
+
+  <div class="container">
+    <div class="row g-3">
+      <h1 class="my-5">Welcome to your favourite e-shop, Home Deco!</h1>
+
+      <% if(items.length > 0){ %>
+        <% items.forEach(item =>{%>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card">
+          <div class="img-div">
+          <img
+            src="../public/img/<%= item.image %>"
+            class="card-img-top"
+            alt="some img"
+            id ="item-picture"
+          />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= item['item-name'] %></h5>
+            <p class="card-text">
+           <%= item['item-description'] %>
+            </p>
+            <p class="price">🏷 Price: <%= item['price']  %> EUR</p>
+            <p class="date"><b>Posted on:</b> <%= `${item.createdAt.toLocaleDateString()}`%></p>
+            <p class="time"><b>At: </b><%= `${item.createdAt.toLocaleTimeString('en-GB')} `%> </p> 
+            <a href="all-items/<%= item._id %>" class="btn btn-primary">Read more</a>
+          </div>
+        </div>
+      </div>
+       <% }) %>
+       <% } %>
+
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+      <script>
+     const nav = document.querySelector('.nav');   
+     const container = document.querySelector('.container');   
+     const message = document.createElement('div');
+     message.classList.add('cookie-message');
+     message.innerHTML=`We use cookies for improved functionality and analytics. <button class="btn btn-warning btn-close-cookie"> Got it </button> `
+     container.prepend(message);
+     //Delete cookie message 
+     document
+  .querySelector('.btn-close-cookie')
+  .addEventListener('click', function () {
+    message.parentElement.removeChild(message);
+  });
+
+    </script>
+</body>
+</html>

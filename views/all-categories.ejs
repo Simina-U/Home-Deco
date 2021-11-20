@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+  <%- include('./partials/nav.ejs') %>
+
+  <div class="container">
+    <div class="row g-3">
+      <h3 class="my-5">See all items available for aquisition, organized by categories. 😉</h3>
+
+      <% if(categories.length > 0){ %>
+        <% categories.forEach(category =>{%>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card">
+           <div class="img-div">
+             <img src=" " id ="home-deco" class="card-img-top" alt="descriptive picture for <%= category['cat-name'] %>">
+             </div>
+             <div class="card-body">
+            <h5 class="card-title"><%= category['cat-name'] %></h5>
+            
+            <a href="all-categories/<%= category._id %>" class="btn btn-primary">All <%= category['cat-name']  %> items </a>
+          </div>
+        </div>
+      </div>
+       <% }) %>
+       <% } %>
+
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+  <script>
+
+   getImage();
+   
+   async function getImage(){
+
+    const response = await fetch("home-deco.jpeg");
+    const blob = await response.blob();
+    document.getElementById('home-deco').src = URL.createObjectURL(blob);
+   }
+
+
+  </script>
+</body>
+</html>
