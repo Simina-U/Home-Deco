@@ -17,8 +17,8 @@
        <p>
       <%= item.description %>
     </p>
-    <p class="seller-email"><b>Seller's Email:</b> <%= item.email %></p>
-    <p class="seller-name"><b>Seller's Name: </b><%= item.fullName %></p>
+    <p class="seller-email"><b>Seller's Email:</b> <%= item.seller.email %></p>
+    <p class="seller-name"><b>Seller's Name: </b><%= item.seller.fullName %></p>
     <a class="btn btn-dark" href="/">Homepage</a>
     <a class="btn btn-danger delete" data-doc="<%= item._id %>">Delete</a>
   </div>
