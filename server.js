@@ -70,8 +70,7 @@ app.post("/all-items", upload.single("image"), (req, res) => {
       category: req.body.category,
       image: req.file.filename,
       description: req.body.description,
-      fullName: req.body.fullName,
-      email: req.body.email,
+      seller: { fullName: req.body.fullName, email: req.body.email },
       quantity: req.body.quantity,
       price: req.body.price,
     }

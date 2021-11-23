@@ -19,16 +19,21 @@ const itemSchema = new Schema(
       type: String,
       required: true,
     },
-    fullName: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
+    seller: {
+      fullName: {
+        type: String,
+        required: true,
+      },
+
+      email: {
+        type: String,
+        required: true,
+      },
     },
     quantity: {
       type: Number,
+      required: true,
+      type: Object,
       required: true,
     },
     price: {
