@@ -15,9 +15,8 @@
            <div class="img-div">
              <img src=" " id ="home-deco" class="card-img-top" alt="descriptive picture for <%= category['cat-name'] %>">
              </div>
-             <div class="card-body">
+             <div class="card-body-category">
             <h5 class="card-title"><%= category['cat-name'] %></h5>
-            
             <a href="all-categories/<%= category._id %>" class="btn btn-primary">All <%= category['cat-name']  %> items </a>
           </div>
         </div>
@@ -34,7 +33,7 @@
    
    async function getImage(){
 
-    const response = await fetch("home-deco.jpeg");
+    const response = await fetch("/categories-default/home-deco.jpeg");
     const blob = await response.blob();
     document.getElementById('home-deco').src = URL.createObjectURL(blob);
    }

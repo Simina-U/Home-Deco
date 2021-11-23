@@ -38,17 +38,22 @@ body * a {
   margin-left: 2%;
 }
 .card-text {
-  height: 10vh;
+  height: 5vh;
+  width: 200px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.img-div {
-  height: 30vh;
+.img-div img {
+  height: 35vh;
   width: 100%;
   background-color: #f4d03f;
   background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
 }
-.item-image {
+.item-image img {
   height: 40vh;
-  width: 50%;
+  width: 30%;
   background-color: #ff3cac;
   background-image: linear-gradient(
     225deg,
@@ -56,6 +61,12 @@ body * a {
     #784ba0 50%,
     #2b86c5 100%
   );
+}
+.card-body {
+  height: 50vh;
+}
+.card-body-category {
+  height: 15vh;
 }
 .footer-ul {
   display: flex;

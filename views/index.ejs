@@ -10,25 +10,26 @@
 
       <% if(items.length > 0){ %>
         <% items.forEach(item =>{%>
-      <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="col-sm-12 col-md-4 col-lg-3">
         <div class="card">
           <div class="img-div">
           <img
-            src="../public/img/<%= item.image %>"
+            src="/img/<%= item.image %>"
             class="card-img-top"
             alt="some img"
             id ="item-picture"
           />
           </div>
           <div class="card-body">
-            <h5 class="card-title"><%= item['item-name'] %></h5>
+            <h5 class="card-title"><%= item.product %></h5>
+            <div></div>
             <p class="card-text">
-           <%= item['item-description'] %>
+           <%= item.description %>
             </p>
-            <p class="price">🏷 Price: <%= item['price']  %> EUR</p>
+            <p class="price">🏷<b>Price:</b> <%= item.price %> EUR</p>
             <p class="date"><b>Posted on:</b> <%= `${item.createdAt.toLocaleDateString()}`%></p>
             <p class="time"><b>At: </b><%= `${item.createdAt.toLocaleTimeString('en-GB')} `%> </p> 
-            <a href="all-items/<%= item._id %>" class="btn btn-primary">Read more</a>
+            <a href="all-items/<%= item._id %>" class="btn btn-primary" style="margin-bottom:1vh ;">Read more</a>
           </div>
         </div>
       </div>

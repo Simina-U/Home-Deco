@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const itemSchema = new Schema(
   {
-    "item-name": {
+    product: {
       type: String,
       required: true,
     },
-    "item-category": {
+    category: {
       type: Schema.Types.ObjectId,
       ref: "Category",
     },
@@ -15,15 +15,15 @@ const itemSchema = new Schema(
       type: String,
       required: false,
     },
-    "item-description": {
+    description: {
       type: String,
       required: true,
     },
-    "seller-name": {
+    fullName: {
       type: String,
       required: true,
     },
-    "seller-email": {
+    email: {
       type: String,
       required: true,
     },

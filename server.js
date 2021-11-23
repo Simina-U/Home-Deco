@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
 
 app.get("/all-items", (req, res) => {
   Item.find()
-    .populate("item-category")
+    .populate("category")
     .sort({ createdAt: -1 })
     .then((result) => {
       res.render("index", {
@@ -66,12 +66,12 @@ app.get("/all-items", (req, res) => {
 app.post("/all-items", upload.single("image"), (req, res) => {
   const item = new Item(
     /*req.body, req.file.filename*/ {
-      "item-name": req.body["item-name"],
-      "item-category": req.body["item-category"],
+      product: req.body.product,
+      category: req.body.category,
       image: req.file.filename,
-      "item-description": req.body["item-description"],
-      "seller-name": req.body["seller-name"],
-      "seller-email": req.body["seller-email"],
+      description: req.body.description,
+      fullName: req.body.fullName,
+      email: req.body.email,
       quantity: req.body.quantity,
       price: req.body.price,
     }
@@ -128,7 +128,7 @@ app.get("/all-items/:id", (req, res) => {
 
 app.get("/all-categories/:id", (req, res) => {
   const id = req.params.id;
-  Item.find({ "item-category": id })
+  Item.find({ category: id })
     .then((result) => {
       res.render("category", {
         title: "All ",

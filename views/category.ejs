@@ -14,16 +14,16 @@
         <div class="card">
           <div class="img-div">
           <img
-            src="../public/img/<%= item.image %>"
+            src="/img/<%= item.image %>"
             class="card-img-top"
             alt="some img"
             id ="item-picture"
           />
           </div>
           <div class="card-body">
-            <h5 class="card-title"><%= item['item-name'] %></h5>
+            <h5 class="card-title"><%= item.product %></h5>
             <p class="card-text">
-           <%= item['item-description'] %>
+           <%= item.description %>
             </p>
             <p class="price">🏷 Price: <%= item['price']  %> EUR</p>
             <p class="date"><b>Posted on:</b> <%= `${item.createdAt.toLocaleDateString()}`%></p>

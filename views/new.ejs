@@ -10,11 +10,11 @@
         <form action="/all-items" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="item-name" class="form-label">Item name</label>
-            <input type="text" class="form-control" id="item-name" name="item-name" />
+            <input type="text" class="form-control" id="item-name" name="product" />
           </div>
            <div class="mb-3">
             <label for="item-category"class="form-label">Category</label>
-            <select class="form-control" id="item-category" name="item-category" >
+            <select class="form-control" id="item-category" name="category" >
                <option value="619753cbdc391c1c7d35975b">Bedroom</option>
                <option value="619753a3dc391c1c7d35975a">Living Room</option>
                <option value="6197dd3d2dd9d7fe96489368">Kitchen</option>
@@ -27,17 +27,17 @@
             <input type="file" class="form-control" id="image" name="image" />
           </div>
 
-            <textarea id="item-description" cols="72" rows="10" name="item-description">Item Description </textarea>
+            <textarea id="item-description" cols="72" rows="10" name="description">Item Description </textarea>
          
           <div class="mb-3">
             <label for="seller-name" class="form-label">Seller Name</label>
-            <input required type="text" class="form-control" id="seller-name" name="seller-name"/>
+            <input required type="text" class="form-control" id="seller-name" name="fullName"/>
           </div>
 
 
           <div class="mb-3">
             <label for="seller-email" class="form-label">Seller Email</label>
-            <input type="email" required class="form-control" id="seller-name" name="seller-email"/>
+            <input type="email" required class="form-control" id="seller-name" name="email"/>
           </div>
 
           <div class="mb-3">
