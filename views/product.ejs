@@ -2,30 +2,31 @@
 <html lang="en">
   <%- include('./partials/head.ejs') %>
   <body>
-  <%- include('./partials/nav.ejs') %>
-  <div class="container">
-    <h1 class="my-3"><%= item.product %></h1>
-    <p class="text-muted"><b>Listed on:</b> <%= `${item.createdAt.toLocaleDateString()}`%></p>
-    <!-- <h5>Category:<span class="skewed"><%= item['item-category'] %> </span></h5> -->
-    <div class="item-image">
-      <img src="/img/<%= item.image %>"/>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <h1 class="my-3"><%= item.product %></h1>
+      <p class="text-muted">
+        <b>Listed on:</b> <%= `${item.createdAt.toLocaleDateString()}`%>
+      </p>
+      <!-- <h5>Category:<span class="skewed"><%= item['item-category'] %> </span></h5> -->
+      <div class="img-div">
+        <img src="/img/<%= item.image %>" />
+      </div>
+      <p></p>
+      <p class="price"><b>Price:</b> <%= item.price %> EUR</p>
+      <p><%= item.description %></p>
+      <p class="seller-email">
+        <b>Seller's Email:</b> <%= item.seller.email %>
+      </p>
+      <p class="seller-name">
+        <b>Seller's Name: </b><%= item.seller.fullName %>
+      </p>
+      <a class="btn btn-dark" href="/">Homepage</a>
+      <a class="btn btn-danger delete" data-doc="<%= item._id %>">Delete</a>
     </div>
-    <p>
- 
-    </p>
-    <p class="price"><b>Price:</b> <%= item.price %> EUR</p>
-       <p>
-      <%= item.description %>
-    </p>
-    <p class="seller-email"><b>Seller's Email:</b> <%= item.seller.email %></p>
-    <p class="seller-name"><b>Seller's Name: </b><%= item.seller.fullName %></p>
-    <a class="btn btn-dark" href="/">Homepage</a>
-    <a class="btn btn-danger delete" data-doc="<%= item._id %>">Delete</a>
-  </div>
 
-  <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/footer.ejs') %>
     <script>
-
       const bin = document.querySelector(".delete");
 
       bin.addEventListener("click", (e) => {
@@ -45,8 +46,6 @@
             console.log(err);
           });
       });
-         
-
     </script>
   </body>
 </html>

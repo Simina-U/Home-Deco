@@ -52,7 +52,7 @@ body * a {
   background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
 }
 .item-image img {
-  height: 40vh;
+  height: 50vh;
   width: 30%;
   background-color: #ff3cac;
   background-image: linear-gradient(
